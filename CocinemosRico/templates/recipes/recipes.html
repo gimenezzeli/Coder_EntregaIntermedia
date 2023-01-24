@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Recetas
+{% endblock %}
+
+{% block content %}
+    <h1>Recetas para todos los gustos...</h1>
+
+    <h2>Crear nueva receta</h2> <a href="/recipes/create-recipes/" class="btn btn-primary">Crear</a>
+
+    {% for recipe in recipes %}
+        <div class="card" style="width: 18rem;">
+            <img src="https://cdn1.intriper.com/wp-content/uploads/2020/06/25120729/milanesa-napolitana-comidas-argentinas.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">{{recipe.name}}t</h5>
+                <p class="card-text">{{recipe.description}} </p>
+                <a href="#" class="btn btn-primary">Ver detalle</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
